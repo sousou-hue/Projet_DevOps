@@ -1,6 +1,6 @@
 ---
-- name: Déployer l’APK avec NGINX (sans Kubernetes)
-  hosts: k8s-master
+- name: Déployer l’APK avec NGINX 
+  hosts: master
   become: true
   vars:
     apk_src: ""  # Chemin absolu transmis par Jenkins
