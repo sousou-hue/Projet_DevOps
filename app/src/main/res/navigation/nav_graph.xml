@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tp5.HomeFragment"
+        android:label="Accueil" />
+
+    <fragment
+        android:id="@+id/classesFragment"
+        android:name="com.example.tp5.ClassesFragment"
+        android:label="Classes"/>
+
+    <fragment
+        android:id="@+id/absenceFormFragment"
+        android:name="com.example.tp5.AbsenceFormFragment"
+        android:label="Formulaire d'absence">
+
+        <!-- Définir l'argument attendu -->
+        <argument
+            android:name="className"
+            app:argType="string"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.tp5.HistoryFragment"
+        android:label="Historique" />
+
+    <!-- Actions de navigation -->
+    <action
+        android:id="@+id/action_classesFragment_to_absenceFormFragment"
+        app:destination="@id/absenceFormFragment" />
+
+    <!-- Ajoutez ces fragments -->
+    <fragment
+        android:id="@+id/emploiDuTempsFragment"
+        android:name="com.example.tp5.EmploiDuTempsFragment"
+        android:label="Emploi du temps"/>
+
+    <fragment
+        android:id="@+id/calendrierFragment"
+        android:name="com.example.tp5.CalendrierFragment"
+        android:label="Calendrier"/>
+
+    <!-- Définir les actions de navigation -->
+    <action
+        android:id="@+id/action_home_to_emploi"
+        app:destination="@id/emploiDuTempsFragment"/>
+
+    <action
+        android:id="@+id/action_home_to_calendrier"
+        app:destination="@id/calendrierFragment"/>
+
+    <action
+        android:id="@+id/action_homeFragment_to_emploiDuTempsFragment"
+        app:destination="@id/emploiDuTempsFragment"/>
+
+    <action
+        android:id="@+id/action_homeFragment_to_calendrierFragment"
+        app:destination="@id/calendrierFragment"/>
+</navigation>
